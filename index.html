@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectly — Social Network</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="logo"><i class="fa-solid fa-leaf"></i> connectly</a>
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="search" placeholder="Search posts...">
+    </div>
+    <button class="icon-btn" id="notifications" aria-label="Notifications">
+      <i class="fa-regular fa-bell"></i>
+    </button>
+    <div class="avatar green">AK</div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="user">
+        <div class="avatar green">AK</div>
+        <div><strong>Abisha Kamran</strong><small>@abisha</small></div>
+      </div>
+      <p class="label">MENU</p>
+      <button class="nav active" data-view="home"><i class="fa-solid fa-house"></i> Home</button>
+      <button class="nav" data-view="explore"><i class="fa-regular fa-compass"></i> Explore</button>
+      <button class="nav" data-view="saved"><i class="fa-regular fa-bookmark"></i> Bookmarks</button>
+      <button class="nav" data-view="profile"><i class="fa-regular fa-user"></i> My Profile</button>
+      <button class="nav" data-view="settings"><i class="fa-solid fa-gear"></i> Settings</button>
+      <div class="sidebar-bottom">
+        <div class="community">
+          <i class="fa-solid fa-users"></i>
+          <h3>Good people. Great ideas.</h3>
+          <p>Connect with your community and share what inspires you.</p>
+        </div>
+        <small>© 2026 Connectly</small>
+      </div>
+    </aside>
+
+    <main class="feed">
+      <section class="welcome">
+        <span class="eyebrow">YOUR COMMUNITY</span>
+        <h1>Welcome back, Abisha <span>✳</span></h1>
+        <p>Discover what's happening in your community today.</p>
+      </section>
+
+      <section class="stories">
+        <div class="story-title"><h3>Stories</h3><span>See what's new</span></div>
+        <div class="story-list">
+          <button class="story add-story" id="addStory">
+            <div class="story-avatar"><i class="fa-solid fa-plus"></i></div>
+            <span>Your story</span>
+          </button>
+          <button class="story" data-story="Sarah Malik">
+            <div class="story-avatar pink">SM</div><span>Sarah</span>
+          </button>
+          <button class="story" data-story="Hamza Ali">
+            <div class="story-avatar blue">HA</div><span>Hamza</span>
+          </button>
+          <button class="story" data-story="Zoya Ahmed">
+            <div class="story-avatar orange">ZA</div><span>Zoya</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="composer card">
+        <div class="compose-row">
+          <div class="avatar green">AK</div>
+          <textarea id="postText" placeholder="Share something with your community..." rows="2"></textarea>
+        </div>
+        <div id="preview"></div>
+        <div class="compose-bottom">
+          <div class="compose-tools">
+            <label class="tool" for="photo"><i class="fa-regular fa-image"></i> Photo</label>
+            <input type="file" id="photo" accept="image/*" hidden>
+            <span class="privacy"><i class="fa-solid fa-earth-americas"></i> Public</span>
+          </div>
+          <button class="primary-btn" id="publish">Publish <i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+      </section>
+
+      <div class="section-title"><h2 id="feedTitle">Your Feed</h2><span>Latest posts</span></div>
+      <section id="posts"></section>
+      <div id="empty" class="card empty hidden">No posts found. Try another search or create a post!</div>
+    </main>
+
+    <aside class="rightbar">
+      <section class="card panel">
+        <div class="panel-heading"><h3>People to follow</h3><i class="fa-solid fa-user-plus"></i></div>
+        <div class="person">
+          <div class="avatar pink">SM</div>
+          <div class="person-info"><strong>Sarah Malik</strong><small>UI/UX Designer</small><button class="follow">+ Follow</button></div>
+        </div>
+        <div class="person">
+          <div class="avatar blue">HA</div>
+          <div class="person-info"><strong>Hamza Ali</strong><small>Web Developer</small><button class="follow">+ Follow</button></div>
+        </div>
+        <div class="person">
+          <div class="avatar orange">ZA</div>
+          <div class="person-info"><strong>Zoya Ahmed</strong><small>Photographer</small><button class="follow">+ Follow</button></div>
+        </div>
+      </section>
+
+      <section class="card panel trends">
+        <div class="panel-heading"><h3>Trending topics</h3><i class="fa-solid fa-arrow-trend-up"></i></div>
+        <button class="trend" data-tag="Web Development"><small>TECHNOLOGY</small><strong>#WebDevelopment</strong><span>Ideas for your next project</span></button>
+        <button class="trend" data-tag="Design"><small>CREATIVITY</small><strong>#DesignInspiration</strong><span>Fresh ideas and inspiration</span></button>
+        <button class="trend" data-tag="Community"><small>COMMUNITY</small><strong>#ConnectTogether</strong><span>Meet your people</span></button>
+      </section>
+
+      <p class="footer-links">About · Privacy · Terms · Help</p>
+    </aside>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
